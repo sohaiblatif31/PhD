@@ -25,11 +25,19 @@ const STATUS_COLORS: Record<string, string> = {
 };
 
 export default function Dashboard() {
-  const { programs, scholarships, initializeData } = useStore();
+  const { programs, scholarships, initializeData, error, loading } = useStore();
 
   useEffect(() => {
     initializeData();
   }, [initializeData]);
+
+  if (loading && programs.length === 0) {
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh', color: 'var(--text-muted)' }}>
+        <p>Connecting to Supabase...</p>
+      </div>
+    );
+  }
 
   const totalPrograms = programs.length;
   const applied = programs.filter(p => ['Submitted', 'Interview', 'Offer Received', 'Accepted'].includes(p.status)).length;
@@ -73,6 +81,26 @@ export default function Dashboard() {
           Your PhD application dashboard — Fall 2027 intake
         </p>
       </div>
+
+      {error && (
+        <div style={{
+          background: 'rgba(239, 68, 68, 0.1)',
+          border: '1px solid rgba(239, 68, 68, 0.25)',
+          borderRadius: '12px',
+          padding: '16px',
+          marginBottom: '24px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '12px',
+          color: '#ef4444'
+        }}>
+          <AlertCircle size={20} />
+          <div>
+            <div style={{ fontWeight: '600', fontSize: '14px' }}>Supabase Error</div>
+            <div style={{ fontSize: '12px', opacity: 0.9 }}>{error}</div>
+          </div>
+        </div>
+      )}
 
       {/* Stats Row */}
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
