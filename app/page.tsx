@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { formatDate, getDaysUntil, getDeadlineColor, getStatusColor, getPriorityColor, getDocumentProgress } from '@/lib/utils';
 import Link from 'next/link';
+import { isUsingPlaceholder, supabaseUrl } from '@/lib/supabase';
 
 const STATUS_FUNNEL = [
   'Not Started', 'Researching', 'Writing', 'Submitted',
@@ -90,14 +91,28 @@ export default function Dashboard() {
           padding: '16px',
           marginBottom: '24px',
           display: 'flex',
-          alignItems: 'center',
-          gap: '12px',
+          flexDirection: 'column',
+          gap: '8px',
           color: '#ef4444'
         }}>
-          <AlertCircle size={20} />
-          <div>
-            <div style={{ fontWeight: '600', fontSize: '14px' }}>Supabase Error</div>
-            <div style={{ fontSize: '12px', opacity: 0.9 }}>{error}</div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <AlertCircle size={20} />
+            <div>
+              <div style={{ fontWeight: '600', fontSize: '14px' }}>Supabase Error</div>
+              <div style={{ fontSize: '12px', opacity: 0.9 }}>{error}</div>
+            </div>
+          </div>
+          <div style={{
+            fontSize: '11px',
+            background: 'rgba(0, 0, 0, 0.2)',
+            padding: '8px 12px',
+            borderRadius: '6px',
+            fontFamily: 'monospace',
+            color: 'var(--text-muted)'
+          }}>
+            <strong>Diagnostics:</strong><br />
+            - Configured URL: {supabaseUrl.slice(0, 25)}...<br />
+            - Using Placeholder: {isUsingPlaceholder ? 'YES (Env variables missing during build)' : 'NO (Env variables loaded successfully)'}
           </div>
         </div>
       )}
