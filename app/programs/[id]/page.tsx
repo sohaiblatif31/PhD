@@ -99,7 +99,7 @@ export default function ProgramDetail() {
         </div>
 
         {/* Status + Priority controls */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
+        <div className="controls-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px' }}>
           <div>
             <label style={{ fontSize: '11px', color: 'var(--text-muted)', fontWeight: '600', letterSpacing: '0.08em', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>Status</label>
             <select className="input-field" style={{ cursor: 'pointer' }} value={program.status} onChange={e => updateProgramStatus(program.id, e.target.value as ApplicationStatus)} aria-label="Status">
@@ -120,7 +120,7 @@ export default function ProgramDetail() {
       </div>
 
       {/* Main 2-col */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '20px' }}>
+      <div className="dashboard-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '20px' }}>
         {/* Left */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
           {/* Info sections */}

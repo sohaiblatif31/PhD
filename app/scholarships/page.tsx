@@ -5,15 +5,20 @@ import { useStore } from '@/lib/store/useStore';
 import { Scholarship } from '@/lib/types';
 import { ExternalLink, DollarSign, Clock, Info, CheckCircle } from 'lucide-react';
 import { getEligibilityColor, getStatusColor, getDeadlineColor, getDaysUntil, formatDate, SCHOLARSHIP_STATUSES } from '@/lib/utils';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 const CATEGORIES = ['All', 'Federal', 'Provincial', 'Industry', 'Foundation'];
 
 export default function ScholarshipsPage() {
-  const { scholarships, initializeData, updateScholarshipStatus, updateScholarshipEligibility } = useStore();
+  const { scholarships, initializeData, updateScholarshipStatus, updateScholarshipEligibility, loading } = useStore();
   const [category, setCategory] = useState('All');
   const [expanded, setExpanded] = useState<string | null>(null);
 
   useEffect(() => { initializeData(); }, [initializeData]);
+
+  if (loading && scholarships.length === 0) {
+    return <LoadingSpinner message="Loading scholarships..." />;
+  }
 
   const filtered = scholarships.filter(s => category === 'All' || s.category === category);
 

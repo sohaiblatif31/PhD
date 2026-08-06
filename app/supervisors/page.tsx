@@ -88,7 +88,7 @@ LinkedIn: [your LinkedIn]`;
       </div>
 
       {/* Stats */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }}>
+      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '12px', marginBottom: '24px' }}>
         {[
           { label: 'Total', value: supervisors.length, color: '#7c3aed' },
           { label: 'Contacted', value: contacted, color: '#06b6d4' },
@@ -108,7 +108,7 @@ LinkedIn: [your LinkedIn]`;
           <h3 style={{ fontSize: '15px', fontWeight: '700', color: 'var(--text-primary)', marginBottom: '16px' }}>
             {editId ? 'Edit Supervisor' : 'Add Supervisor'}
           </h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+          <div className="form-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
             {([
               { key: 'name', label: 'Full Name *', placeholder: 'Dr. Jane Smith' },
               { key: 'university', label: 'University *', placeholder: 'University of Waterloo' },

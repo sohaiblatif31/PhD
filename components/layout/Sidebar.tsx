@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import {
@@ -11,6 +12,8 @@ import {
   Calendar,
   BookOpen,
   Sparkles,
+  Menu,
+  X,
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useStore } from '@/lib/store/useStore';
@@ -26,22 +29,49 @@ const navItems = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <aside
-      className="sidebar"
-      style={{
-        width: '240px',
-        minHeight: '100vh',
-        position: 'sticky',
-        top: 0,
-        display: 'flex',
-        flexDirection: 'column',
-        padding: '24px 16px',
-        gap: '4px',
-        flexShrink: 0,
-      }}
-    >
+    <>
+      {/* Mobile Header Bar */}
+      <div className="mobile-header">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{
+            width: '28px',
+            height: '28px',
+            borderRadius: '8px',
+            background: 'linear-gradient(135deg, #7c3aed, #06b6d4)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+            <Sparkles size={14} color="white" />
+          </div>
+          <span style={{ fontSize: '14px', fontWeight: '700', color: 'var(--text-primary)' }}>PhD Tracker</span>
+        </div>
+        <button 
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            background: 'transparent',
+            border: 'none',
+            color: 'var(--text-primary)',
+            cursor: 'pointer',
+            padding: '4px',
+          }}
+        >
+          {isOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
+      </div>
+
+      {/* Backdrop for Mobile */}
+      {isOpen && (
+        <div 
+          className="sidebar-backdrop" 
+          onClick={() => setIsOpen(false)}
+        />
+      )}
+
+      <aside className={cn('sidebar-container', isOpen && 'open')}>
       {/* Logo */}
       <div style={{ marginBottom: '32px', padding: '0 8px' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '4px' }}>
@@ -75,7 +105,12 @@ export default function Sidebar() {
         {navItems.map(({ href, label, icon: Icon }) => {
           const isActive = pathname === href;
           return (
-            <Link key={href} href={href} style={{ textDecoration: 'none' }}>
+            <Link 
+              key={href} 
+              href={href} 
+              style={{ textDecoration: 'none' }}
+              onClick={() => setIsOpen(false)}
+            >
               <div
                 className={cn('nav-link', isActive && 'active')}
               >
@@ -118,5 +153,6 @@ export default function Sidebar() {
         </p>
       </div>
     </aside>
+    </>
   );
 }

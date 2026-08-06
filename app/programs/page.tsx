@@ -12,6 +12,7 @@ import {
   cn, getStatusColor, getPriorityColor, getFitColor,
   getDeadlineColor, getDaysUntil, formatDate, APPLICATION_STATUSES
 } from '@/lib/utils';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 const PROVINCES = ['All', 'AB', 'BC', 'MB', 'NS', 'ON', 'QC'];
 const LANGUAGES = ['All', 'English', 'French', 'Bilingual'];
@@ -20,7 +21,7 @@ const PRIORITIES = ['All', 'High', 'Medium', 'Low'];
 const STATUSES = ['All', ...APPLICATION_STATUSES];
 
 export default function ProgramsPage() {
-  const { programs, initializeData, updateProgramStatus, updateProgramPriority } = useStore();
+  const { programs, initializeData, updateProgramStatus, updateProgramPriority, loading } = useStore();
   const [search, setSearch] = useState('');
   const [province, setProvince] = useState('All');
   const [language, setLanguage] = useState('All');
@@ -30,6 +31,10 @@ export default function ProgramsPage() {
   const [sort, setSort] = useState<'deadline' | 'funding' | 'fit' | 'priority'>('deadline');
 
   useEffect(() => { initializeData(); }, [initializeData]);
+
+  if (loading && programs.length === 0) {
+    return <LoadingSpinner message="Loading programs..." />;
+  }
 
   const filtered = programs
     .filter(p => {

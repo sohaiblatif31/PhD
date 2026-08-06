@@ -9,6 +9,7 @@ import {
 import { formatDate, getDaysUntil, getDeadlineColor, getStatusColor, getPriorityColor, getDocumentProgress } from '@/lib/utils';
 import Link from 'next/link';
 import { isUsingPlaceholder, supabaseUrl } from '@/lib/supabase';
+import LoadingSpinner from '@/components/shared/LoadingSpinner';
 
 const STATUS_FUNNEL = [
   'Not Started', 'Researching', 'Writing', 'Submitted',
@@ -33,11 +34,7 @@ export default function Dashboard() {
   }, [initializeData]);
 
   if (loading && programs.length === 0) {
-    return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '80vh', color: 'var(--text-muted)' }}>
-        <p>Connecting to Supabase...</p>
-      </div>
-    );
+    return <LoadingSpinner message="Syncing with Supabase..." />;
   }
 
   const totalPrograms = programs.length;
@@ -118,7 +115,7 @@ export default function Dashboard() {
       )}
 
       {/* Stats Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
+      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '16px', marginBottom: '32px' }}>
         <StatCard
           icon={<GraduationCap size={22} />}
           label="Programs Tracked"
@@ -150,7 +147,7 @@ export default function Dashboard() {
       </div>
 
       {/* Main 2-col grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '24px', marginBottom: '24px' }}>
+      <div className="dashboard-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 340px', gap: '24px', marginBottom: '24px' }}>
         {/* Upcoming Deadlines */}
         <div className="glass-card" style={{ padding: '24px' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
