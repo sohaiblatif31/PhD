@@ -27,6 +27,7 @@ CREATE TABLE programs (
   supervisors TEXT[] DEFAULT '{}',
   notes TEXT,
   documents JSONB NOT NULL DEFAULT '[]',
+  "lastVerified" DATE,
   "createdAt" TIMESTAMPTZ NOT NULL,
   "updatedAt" TIMESTAMPTZ NOT NULL
 );
@@ -48,7 +49,9 @@ CREATE TABLE scholarships (
   "eligibleForMe" TEXT NOT NULL,
   status TEXT NOT NULL,
   "internationalEligible" BOOLEAN NOT NULL,
-  category TEXT NOT NULL
+  category TEXT NOT NULL,
+  "lastVerified" DATE,
+  discontinued BOOLEAN NOT NULL DEFAULT false
 );
 
 -- Supervisors Table
@@ -69,3 +72,8 @@ CREATE TABLE supervisors (
 
 -- Note: In a production app, you would enable Row Level Security (RLS) here.
 -- Since this is a single-user project without auth for now, we will not enforce RLS.
+
+-- Migration: run these if the tables already exist from a previous schema version
+-- ALTER TABLE programs ADD COLUMN IF NOT EXISTS "lastVerified" DATE;
+-- ALTER TABLE scholarships ADD COLUMN IF NOT EXISTS "lastVerified" DATE;
+-- ALTER TABLE scholarships ADD COLUMN IF NOT EXISTS discontinued BOOLEAN NOT NULL DEFAULT false;

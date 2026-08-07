@@ -1,6 +1,7 @@
 import { Scholarship } from '@/lib/types';
 
 const now = new Date().toISOString();
+const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
 
 export const seedScholarships: Scholarship[] = [
   {
@@ -20,6 +21,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Federal',
+    lastVerified: null,
+    discontinued: false,
   },
   {
     id: 'schol-2',
@@ -38,6 +41,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Foundation',
+    lastVerified: null,
+    discontinued: false,
   },
   {
     id: 'schol-3',
@@ -56,6 +61,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Industry',
+    lastVerified: null,
+    discontinued: false,
   },
   {
     id: 'schol-4',
@@ -63,8 +70,8 @@ export const seedScholarships: Scholarship[] = [
     shortName: 'OTS',
     value: '$40,000 CAD/yr, renewable up to 4 years',
     valueAmount: '$40,000/yr',
-    deadline: 'Varies by university, typically ~September; nomination for the following fall/spring/winter intake.',
-    deadlineDate: '2026-09-30',
+    deadline: 'OTS nomination follows each host university\'s own PhD application deadline — no separate OTS deadline exists. Apply by submitting your PhD application on time; your Ontario university nominates you automatically.',
+    deadlineDate: '2027-01-15',
     link: 'https://www.ontario.ca/page/ontario-trillium-scholarship',
     eligibility: 'International students only (valid Canadian study permit); A-average (80%+) in final two years; enrolling full-time in a doctoral program at an eligible Ontario university.',
     requirements: 'No separate application in most cases — nominated automatically by your Ontario university based on your PhD application.',
@@ -74,12 +81,14 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
+    lastVerified: null,
+    discontinued: false,
   },
   {
     id: 'schol-5',
     name: 'FRQNT Doctoral Research Scholarship (B2)',
     shortName: 'FRQNT B2',
-    value: '$25,000 CAD/yr for up to 3 years',
+    value: '$25,000 CAD/yr, up to 12 semesters ($100,000 max)',
     valueAmount: '$25,000/yr',
     deadline: 'Typically September–October annually for the following academic year.',
     deadlineDate: '2026-10-01',
@@ -92,6 +101,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
+    lastVerified: today,
+    discontinued: false,
   },
   {
     id: 'schol-6',
@@ -110,6 +121,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
+    lastVerified: null,
+    discontinued: false,
   },
 
   // ── NEW SCHOLARSHIPS ADDED VIA RESEARCH (Aug 2026) ──────────────────────
@@ -131,25 +144,29 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
+    lastVerified: null,
+    discontinued: false,
   },
 
   {
     id: 'schol-8',
-    name: 'NSERC Postgraduate Scholarship – Doctoral (PGS-D)',
+    name: 'NSERC Postgraduate Scholarship – Doctoral (PGS-D) [DISCONTINUED]',
     shortName: 'NSERC PGS-D',
-    value: '$21,000 CAD/yr for up to 3 years',
+    value: '$21,000 CAD/yr for up to 3 years (discontinued — replaced by CGRS-D)',
     valueAmount: '$21,000/yr',
-    deadline: 'Applications submitted through your host university — typically October 2026 for 2027 award.',
-    deadlineDate: '2026-10-15',
+    deadline: 'DISCONTINUED — no longer accepting applications. Was replaced by the CGRS-D program (schol-1) effective Fall 2025.',
+    deadlineDate: null,
     link: 'https://www.nserc-crsng.gc.ca/Students-Etudiants/PG-CS/PGSD-BESC_eng.asp',
-    eligibility: 'Full-time PhD students in natural sciences and engineering at a Canadian university. Open to Canadian citizens, permanent residents, AND international students (since 2026 CGRS-D reform). Must demonstrate research excellence.',
-    requirements: 'Application via Canadian Common CV (CCV) submitted through your university, research proposal, transcripts, 2 referee reports. Applied through the university, not NSERC directly.',
-    competitiveness: 'Competitive — several hundred awards nationally per year. Engineering background (NUST BE) gives you a strong disciplinary fit. Your applied tech + supply chain digitization research angles well into NSERC\'s mandate.',
-    notes: 'SOHAIB FIT: Your NUST Mechanical Engineering degree + supply chain digitization + GreenBuild Ledger (sustainability + material traceability = engineering research) makes you NSERC-eligible in a way most business-only PhDs are not. Key differentiator vs. SSHRC applicants. Apply if attending UBC Engineering, Waterloo Eng, or any engineering-faculty program.',
-    eligibleForMe: 'Yes',
+    eligibility: 'N/A — discontinued and merged into the Canada Graduate Research Scholarship – Doctoral (CGRS-D). Apply to CGRS-D (schol-1) instead.',
+    requirements: 'N/A — discontinued.',
+    competitiveness: 'N/A — discontinued.',
+    notes: '⚠️ DISCONTINUED: NSERC PGS-D has been discontinued and merged into the harmonized CGRS-D program (schol-1). Do NOT prepare a PGS-D application. Apply to CGRS-D through your university instead. This record is kept for reference only.',
+    eligibleForMe: 'No',
     status: 'Not Started',
-    internationalEligible: true,
+    internationalEligible: false,
     category: 'Federal',
+    lastVerified: today,
+    discontinued: true,
   },
 
   {
@@ -169,6 +186,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
+    lastVerified: null,
+    discontinued: false,
   },
 
   {
@@ -188,6 +207,8 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Industry',
+    lastVerified: null,
+    discontinued: false,
   },
 
   {
@@ -207,5 +228,7 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Federal',
+    lastVerified: null,
+    discontinued: false,
   },
 ];

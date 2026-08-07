@@ -5,7 +5,7 @@ import { useStore } from '@/lib/store/useStore';
 import { Program, ApplicationStatus, Priority } from '@/lib/types';
 import {
   Search, Filter, Plus, MapPin, Globe, BookOpen,
-  ExternalLink, ChevronDown, Star, Clock,
+  ExternalLink, ChevronDown, Star, Clock, AlertTriangle, ShieldCheck,
 } from 'lucide-react';
 import Link from 'next/link';
 import {
@@ -169,8 +169,19 @@ function ProgramCard({ program: p, onStatusChange, onPriorityChange }: {
         </div>
       </div>
 
-      {/* Specialization */}
-      <div style={{ fontSize: '13px', color: '#a78bfa', fontWeight: '500' }}>{p.specialization}</div>
+      {/* Specialization + Verified badge */}
+      <div style={{ marginBottom: '4px' }}>
+        <div style={{ fontSize: '13px', color: '#a78bfa', fontWeight: '500', marginBottom: '4px' }}>{p.specialization}</div>
+        {p.lastVerified ? (
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '10px', color: '#34d399', fontWeight: '600' }}>
+            <ShieldCheck size={10} /> Verified {p.lastVerified}
+          </span>
+        ) : (
+          <span style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '10px', color: '#f59e0b', fontWeight: '600' }}>
+            <AlertTriangle size={10} /> Deadline not verified
+          </span>
+        )}
+      </div>
 
       {/* Fit + Location */}
       <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>

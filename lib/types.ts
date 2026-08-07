@@ -47,6 +47,7 @@ export interface Program {
   supervisors: string[]; // supervisor IDs
   notes: string;
   documents: AppDocument[];
+  lastVerified: string | null; // ISO date — when deadline/requirements were last checked against source
   createdAt: string;
   updatedAt: string;
 }
@@ -71,6 +72,8 @@ export interface Scholarship {
   status: ScholarshipStatus;
   internationalEligible: boolean;
   category: 'Federal' | 'Provincial' | 'Industry' | 'Foundation';
+  lastVerified: string | null; // ISO date — when this scholarship was last checked against official source
+  discontinued: boolean; // true if scholarship no longer exists / has been merged
 }
 
 export type SupervisorResponse = 'Positive' | 'Negative' | 'Awaiting' | null;

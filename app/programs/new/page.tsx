@@ -60,6 +60,7 @@ export default function NewProgramPage() {
       createdAt: now,
       updatedAt: now,
       deadlineDate: form.deadlineDate || null,
+      lastVerified: null,
     };
     addProgram(newProgram);
     router.push('/programs');
