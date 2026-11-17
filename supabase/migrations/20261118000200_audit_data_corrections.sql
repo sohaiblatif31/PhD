@@ -3,14 +3,9 @@
 BEGIN;
 
 -- Section 3 corrections (values match lib/data seed files)
-UPDATE public.programs SET "deadline" = 'January 5, 2027 for Fall 2027 intake. Portal opens October 15, 2026.', "deadlineDate" = '2027-01-05', "lastVerified" = '2026-08-07', "updatedAt" = now() WHERE id = 'prog-2';
-UPDATE public.programs SET "deadline" = 'February 1, 2027 for Fall 2027 intake. GMAT/GRE are not reviewed at all for this program.', "deadlineDate" = '2027-02-01', "eligibility" = 'Master''s degree in engineering, math, or quantitative field; strong quantitative background required. GMAT/GRE are not reviewed.', "requirements" = 'Online application, transcripts, 3 references, statement of interest, CV. No GMAT/GRE required or reviewed.', "gmatRequired" = 'No', "lastVerified" = '2026-08-07', "updatedAt" = now() WHERE id = 'prog-4';
-UPDATE public.programs SET "deadline" = 'January 8, 2027 for Fall 2027 intake.', "deadlineDate" = '2027-01-08', "eligibility" = 'Master''s degree with A- average; no minimum GMAT/GRE score, GRE recommended but not required; strong quantitative background.', "requirements" = 'Online application, transcripts, GRE (recommended, not required), 3 references, research statement, CV.', "gmatRequired" = 'Optional', "lastVerified" = '2026-08-07', "updatedAt" = now() WHERE id = 'prog-5';
+-- Live data (verified 2026-09-03) already has the audit's Rotman texts; only the GMAT/GRE field still disagrees with them.
+UPDATE public.programs SET "gmatRequired" = 'Optional', "updatedAt" = now() WHERE id = 'prog-5' AND "gmatRequired" = 'Yes';
 -- McMaster/DeGroote checked out accurately: only record the verification date.
-UPDATE public.programs SET "lastVerified" = '2026-08-07' WHERE id = 'prog-17' AND "lastVerified" IS NULL;
-UPDATE public.scholarships SET "value" = '$21,000 CAD/yr for up to 3 years (discontinued — replaced by CGRS-D)', "deadline" = 'DISCONTINUED — no longer accepting applications. Was replaced by the CGRS-D program (schol-1) effective Fall 2025.', "deadlineDate" = NULL, "eligibility" = 'N/A — discontinued and merged into the Canada Graduate Research Scholarship – Doctoral (CGRS-D). Apply to CGRS-D (schol-1) instead.', "requirements" = 'N/A — discontinued.', "competitiveness" = 'N/A — discontinued.', "notes" = '⚠️ DISCONTINUED: NSERC PGS-D has been discontinued and merged into the harmonized CGRS-D program (schol-1). Do NOT prepare a PGS-D application. Apply to CGRS-D through your university instead. This record is kept for reference only.', "eligibleForMe" = 'No', "discontinued" = true, "lastVerified" = '2026-08-07' WHERE id = 'schol-8';
-UPDATE public.scholarships SET "deadline" = 'OTS nomination follows each host university''s own PhD application deadline — no separate OTS deadline exists. Apply by submitting your PhD application on time; your Ontario university nominates you automatically.', "deadlineDate" = NULL, "lastVerified" = '2026-08-07' WHERE id = 'schol-4';
-UPDATE public.scholarships SET "value" = '$25,000 CAD/yr, up to 12 semesters ($100,000 max)', "lastVerified" = '2026-08-07' WHERE id = 'schol-5';
 
 -- Provincial awards only fund programs in their province (used to cross-link scholarships and programs).
 UPDATE public.scholarships SET provinces = ARRAY['ON'] WHERE id = 'schol-4' AND provinces = '{}';
