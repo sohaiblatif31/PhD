@@ -166,6 +166,7 @@ LinkedIn: [your LinkedIn]`;
             <thead>
               <tr>
                 <th>Name & University</th>
+                <th>Email</th>
                 <th>Research Focus</th>
                 <th>Contacted</th>
                 <th>Response</th>
@@ -179,6 +180,18 @@ LinkedIn: [your LinkedIn]`;
                     <div style={{ fontWeight: '600', color: 'var(--text-primary)', fontSize: '13px' }}>{sup.name}</div>
                     <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>{sup.university}</div>
                     {sup.notes && <div style={{ fontSize: '11px', color: 'var(--text-muted)', marginTop: '2px', fontStyle: 'italic' }}>{sup.notes.slice(0, 60)}...</div>}
+                  </td>
+                  <td>
+                    {sup.email ? (
+                      <a href={`mailto:${sup.email}`} style={{ fontSize: '12px', color: '#7c3aed', textDecoration: 'none', wordBreak: 'break-all' }}
+                        onMouseEnter={e => (e.currentTarget.style.textDecoration = 'underline')}
+                        onMouseLeave={e => (e.currentTarget.style.textDecoration = 'none')}
+                      >
+                        {sup.email}
+                      </a>
+                    ) : (
+                      <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>—</span>
+                    )}
                   </td>
                   <td style={{ fontSize: '12px', maxWidth: '200px' }}>{sup.researchFocus || '—'}</td>
                   <td>
