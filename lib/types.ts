@@ -74,6 +74,7 @@ export interface Scholarship {
   category: 'Federal' | 'Provincial' | 'Industry' | 'Foundation';
   lastVerified: string | null; // ISO date — when this scholarship was last checked against official source
   discontinued: boolean; // true if scholarship no longer exists / has been merged
+  provinces: string[]; // province codes the award is limited to; empty = any province
 }
 
 export type SupervisorResponse = 'Positive' | 'Negative' | 'Awaiting' | null;
@@ -90,15 +91,34 @@ export interface Supervisor {
   responded: boolean;
   responseType: SupervisorResponse;
   notes: string;
+  contactedAt: string | null; // ISO date of first outreach
+  followUpAt: string | null; // ISO date a follow-up is due
+  respondedAt: string | null;
   createdAt: string;
 }
 
-export interface DeadlineItem {
-  id: string;
-  type: 'program' | 'scholarship';
-  name: string;
-  deadline: string;
-  deadlineDate: string;
-  status: ApplicationStatus | ScholarshipStatus;
-  priority?: Priority;
+export interface LetterRequest {
+  programId: string;
+  requestedAt: string | null;
+  submittedAt: string | null;
 }
+
+export interface Referee {
+  id: string;
+  name: string;
+  email: string;
+  affiliation: string;
+  relationship: string;
+  notes: string;
+  requests: LetterRequest[];
+  createdAt: string;
+}
+
+export interface AppData {
+  programs: Program[];
+  scholarships: Scholarship[];
+  supervisors: Supervisor[];
+  referees: Referee[];
+}
+
+export type TableName = keyof AppData;

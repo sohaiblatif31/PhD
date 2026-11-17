@@ -1,4 +1,4 @@
-import { Program, AppDocument } from '@/lib/types';
+import type { Program, AppDocument } from '@/lib/types';
 
 const defaultDocs = (): AppDocument[] => [
   { id: 'd1', name: 'Statement of Purpose', status: 'Not Started' },
@@ -27,7 +27,8 @@ const noGmatDocs = (): AppDocument[] => [
 ];
 
 const now = new Date().toISOString();
-const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+// Date of the audit that verified prog-2, prog-4, prog-5 and prog-17 against official pages.
+const AUDIT_DATE = '2026-08-07';
 
 export const seedPrograms: Program[] = [
   {
@@ -86,7 +87,7 @@ export const seedPrograms: Program[] = [
     supervisors: [],
     notes: '',
     documents: defaultDocs(),
-    lastVerified: null,
+    lastVerified: AUDIT_DATE,
     createdAt: now,
     updatedAt: now,
   },
@@ -146,7 +147,7 @@ export const seedPrograms: Program[] = [
     supervisors: [],
     notes: '',
     documents: noGmatDocs(),
-    lastVerified: today,
+    lastVerified: AUDIT_DATE,
     createdAt: now,
     updatedAt: now,
   },
@@ -169,14 +170,14 @@ export const seedPrograms: Program[] = [
     city: 'Toronto',
     province: 'ON',
     language: 'English',
-    gmatRequired: 'Yes',
+    gmatRequired: 'Optional',
     duration: '5 years',
     status: 'Not Started',
     priority: 'Medium',
     supervisors: [],
     notes: '',
     documents: defaultDocs(),
-    lastVerified: today,
+    lastVerified: AUDIT_DATE,
     createdAt: now,
     updatedAt: now,
   },
@@ -541,7 +542,7 @@ export const seedPrograms: Program[] = [
     supervisors: [],
     notes: 'Frame GreenBuild Ledger as sustainability OR research. Strong LEED/ESG angle fits DeGroote\'s sustainability mandate. Supervisors Elkafi Hassini and Mehmet Begen are tracked in the Supervisors section.',
     documents: defaultDocs(),
-    lastVerified: null,
+    lastVerified: AUDIT_DATE,
     createdAt: now,
     updatedAt: now,
   },

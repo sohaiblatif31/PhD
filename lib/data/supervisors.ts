@@ -1,4 +1,4 @@
-import { Supervisor } from '@/lib/types';
+import type { Supervisor } from '@/lib/types';
 
 const now = new Date().toISOString();
 
@@ -16,6 +16,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Desautels Faculty of Management — Highlight your \'GreenBuild Ledger\' & AI dashboards. His focus on decarbonization perfectly matches your LEED/Estidama/LCA work.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Toronto — Mechanical and Industrial Engineering
@@ -31,6 +34,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mechanical and Industrial Engineering — Focus on your Industrial/Mechanical Engineering background and \'RMSys\' AI-driven supply chain resilience project.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Waterloo — Management Science and Engineering
@@ -46,6 +52,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Science and Engineering — Discuss your custom Smart Supply Chain solutions and transition to Industry 4.0 via React/AI integrations.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of British Columbia (UBC) — Faculty of Management (Sustainability)
@@ -61,6 +70,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Faculty of Management (Sustainability) — Lead with your MPhil in Sustainable Infrastructure and Gov-IMS (ISO 9001) digitization framework.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McMaster University — DeGroote School of Business (Operations Mgmt)
@@ -76,6 +88,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'DeGroote School of Business (Operations Mgmt) — Emphasize your \'Intelligent BoM\' project (Computer Vision/Gemini integration) and data-driven SCM KPI dashboards.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Concordia University — Supply Chain and Business Technology Management
@@ -91,6 +106,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Supply Chain and Business Technology Management — Frame your 10+ years of operational risk management and Triple Bottom Line focus for SCM sustainability.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Alberta — Alberta School of Business (Business Analytics)
@@ -106,6 +124,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Alberta School of Business (Business Analytics) — Focus on your multi-million dollar strategic sourcing metrics (15% cost reduction) and digital workflow optimization.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Concordia University — Supply Chain and Business Technology Management
@@ -121,6 +142,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Supply Chain and Business Technology Management — Highlight your dual Mechanical Engineering + MBA strategy background, matching his exact interdisciplinary focus.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Queen\'s University — Smith School of Business (Management Analytics)
@@ -136,6 +160,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Smith School of Business (Management Analytics) — Discuss your predictive analytics dashboards for executive decision-making and your $10M+ managed contract spend.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McGill University — Desautels Faculty of Management
@@ -151,6 +178,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Desautels Faculty of Management — Connect your \'digital divide\' research from your MPhil with your practical AI-driven SaaS (ChromaDiv).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Queen\'s University — Smith School of Business (Management Analytics)
@@ -166,6 +196,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Smith School of Business (Management Analytics) — Bridge your Industrial Engineering background with Python for SCM Analytics and PowerBI/Tableau expertise.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McMaster University — Chemical Engineering
@@ -181,6 +214,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Chemical Engineering — Highlight your ISO 9001/14001 compliance builds and your transition of manufacturing to Industry 4.0.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // HEC Montréal — Department of Logistics and Operations Management
@@ -196,6 +232,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Department of Logistics and Operations Management — Pitch your \'Intelligent BoM\' and computer vision/Gemini capabilities. Position yourself as a builder who operationalizes AI in SCM.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -210,6 +249,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Department of Logistics and Operations Management — Focus on your 10+ years of robust procurement-to-delivery workflow management and 99.2% stock accuracy.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Dalhousie University — Rowe School of Business
@@ -225,6 +267,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rowe School of Business — Emphasize your MPhil in Sustainable Infrastructure and the GreenBuild Ledger\'s LCA/LEED alignment.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Toronto — Rotman School of Management
@@ -240,6 +285,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rotman School of Management — Highlight your custom React/Next.js data visualization and predictive analytics dashboards built for executive operations.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of British Columbia (UBC) — Sauder School of Business
@@ -255,6 +303,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Sauder School of Business — Leverage your MBA in Strategic Management and your track record of saving 15% on multi-million-dollar sourcing contracts.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Toronto — Rotman School of Management
@@ -270,6 +321,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rotman School of Management — Discuss your ESG and Triple Bottom Line focus (Profit/People/Planet), connecting it to your digital SOP implementation.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // York University — Schulich School of Business
@@ -285,6 +339,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Schulich School of Business — Lead with your 12% material waste reduction and 100% adherence to international manufacturing standards (ISO 9001).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -299,6 +356,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Schulich School of Business — Showcase your \'RMSys\' AI-driven resilience hub which cut over-stocking by 18% via AI forecasting.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Calgary — Haskayne School of Business
@@ -314,6 +374,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Haskayne School of Business — Detail your work directing daily production planning and your transition to JIT vendor management frameworks.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -328,6 +391,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Haskayne School of Business — Highlight your 99% service level via SAP-based MRP and automated FEFO (First-Expired, First-Out) protocol implementation.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Western University — Ivey Business School
@@ -343,6 +409,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Present yourself as an AI Product Developer in SCM. Focus on your agency (ChromaDiv) and building custom smart supply chain solutions.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -357,6 +426,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Discuss your industrial engineering background combined with SQL and Python for SCM analytics.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Ottawa — Telfer School of Management
@@ -372,6 +444,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Telfer School of Management — Mention your 40% reduction in process variance and optimization of preventative maintenance to reduce delays.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -386,6 +461,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Telfer School of Management — Frame your legacy system replacement with modern digital infrastructure and automated CAPA tracking.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Waterloo — Management Sciences
@@ -401,6 +479,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Highlight your hands-on coding (Python, PowerBI) to build demand-forecasting models that improved operations.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -415,6 +496,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Connect your Mechanical Engineering background (NUST) with your recent AI deployments for predictive dashboards.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Laval University — Mechanical Engineering (Industrial Ops)
@@ -430,6 +514,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mechanical Engineering (Industrial Ops) — A perfect match: emphasize your dual Mechanical Engineering/SCM background and MPhil in Sustainable Infrastructure.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Toronto Metropolitan University (TMU) — Mechanical and Industrial Engineering
@@ -445,6 +532,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mechanical and Industrial Engineering — Focus on your Lean Six Sigma/DMAIC skills and your zero operational downtime achievements.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McMaster University — DeGroote School of Business
@@ -460,6 +550,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'DeGroote School of Business — Discuss your operational risk mitigation, achieving a \'Zero Major Non-Conformance\' audit rating for the government.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Windsor — Odette School of Business
@@ -475,6 +568,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Odette School of Business — Highlight your practical application of operations research via your custom \'Gov-IMS\' digital governance framework.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -489,6 +585,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mechanical, Automotive & Materials Engineering — Focus on your LEED BD+C Framework expertise, Carbon Footprint Modeling, and 12% waste reduction metric.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Simon Fraser University (SFU) — Beedie School of Business
@@ -504,6 +603,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Beedie School of Business — Position your unique ability to bridge business strategy with digital/AI product development (React/Next.js).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Dalhousie University — Rowe School of Business
@@ -519,6 +621,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rowe School of Business — Discuss your $10M+ contract negotiations and your 35% lead-time reduction metric.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // York University — School of Administrative Studies
@@ -534,6 +639,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'School of Administrative Studies — Highlight your ISO 14001 compliance builds and your LCA material ledger deployments for sustainable operations.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Manitoba — Asper School of Business
@@ -549,6 +657,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Asper School of Business — Lead with your 99% service level and SAP-based MRP implementations in complex manufacturing environments.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Western University — Ivey Business School
@@ -564,6 +675,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Discuss your MPhil research on sustainable infrastructure and the GreenBuild Ledger\'s material efficiency metrics.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -578,6 +692,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Focus strictly on your multimillion-dollar contract negotiations and 15% sourcing cost reductions for the government.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Toronto — Rotman School of Management
@@ -593,6 +710,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rotman School of Management — Bridge your mechanical engineering foundation with your custom carbon footprint modeling and LCA projects.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -607,6 +727,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rotman School of Management — Pitch your AI-driven SaaS platform builds, specifically the RMSys inventory optimization engine.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of British Columbia (UBC) — Sauder School of Business
@@ -622,6 +745,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Sauder School of Business — Highlight the 18% reduction in over-stocking you achieved using AI forecasting and automated FEFO.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -636,6 +762,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Sauder School of Business — Showcase your data expertise (SQL, Python, PowerBI) and custom predictive dashboards for executive decision-making.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // HEC Montréal — Department of Logistics and Operations Management
@@ -651,6 +780,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Department of Logistics and Operations Management — Discuss your Lean Six Sigma/DMAIC deployment and how you reduced process variance by 40% using digital SOPs.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -665,6 +797,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Department of Logistics and Operations Management — Lead with your 5+ years driving strategic public procurement for the Government of Pakistan with 0 operational downtime.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -679,6 +814,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Department of Decision Sciences — Connect your engineering data processing background and Next.js data visualization tools to his network design focus.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Calgary — Haskayne School of Business
@@ -694,6 +832,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Haskayne School of Business — Focus on maintaining your 99% service level using SAP MRP while transitioning toward JIT capabilities.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McGill University — Desautels Faculty of Management
@@ -709,6 +850,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Desautels Faculty of Management — Emphasize your \'Triple Bottom Line\' philosophy and how your Gov-IMS enforced accountability/governance digitally.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -723,6 +867,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Desautels Faculty of Management — Highlight your strategic sourcing frameworks and the automation of material rejection logic to mitigate risks.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -737,6 +884,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Desautels Faculty of Management — Frame your background as bridging the operational execution of engineering with the high-level foresight of an MBA.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Waterloo — Management Sciences
@@ -752,6 +902,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Present your automated CAPA tracking system and digital IMS frameworks that secured \'Zero Major Non-Conformance\' audits.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -766,6 +919,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Discuss your agency ChromaDiv and how you build custom \'Smart Supply Chain\' optimization solutions using AI.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McMaster University — DeGroote School of Business
@@ -781,6 +937,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'DeGroote School of Business — Pitch your automated Bill-of-Materials tool (Intelligent BoM) using Computer Vision for rapid operational processing.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Brock University — Goodman School of Business
@@ -796,6 +955,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Goodman School of Business — Highlight your tenure managing QC/QA protocols in high-pressure manufacturing environments under ISO standards.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Wilfrid Laurier University — Lazaridis School of Business and Economics
@@ -811,6 +973,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Lazaridis School of Business and Economics — Discuss your research on the impact of trade policy on regional logistics from your MPhil studies.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -825,6 +990,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Lazaridis School of Business and Economics — Focus on the predictive analytics and demand forecasting agents you constructed for executive retail/restaurant logistics.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Dalhousie University — Rowe School of Business
@@ -840,6 +1008,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rowe School of Business — Leverage your engineering mathematics background and Python SCM analytics for complex problem solving.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Carleton University — Sprott School of Business
@@ -855,6 +1026,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Sprott School of Business — A natural fit: discuss your core positioning as a Technologist bridging industrial engineering with digital/AI product development.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -869,6 +1043,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Sprott School of Business — Emphasize your role as Founder of ChromaDiv, guiding companies through Industry 4.0 and digital modernization transitions.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Ontario Tech University — Faculty of Business and IT
@@ -884,6 +1061,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Faculty of Business and IT — Connect your $10M+ strategic sourcing management with B2B channel efficiency methodologies.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Western University — Ivey Business School
@@ -899,6 +1079,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Detail your GreenBuild Ledger project deployed for the UAE Smart Cities context and Net Zero 2050 goals.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // McMaster University — DeGroote School of Business
@@ -914,6 +1097,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'DeGroote School of Business — Highlight your SAP-based material requirement planning (MRP) and real-time operational reporting initiatives.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Toronto — Rotman School of Management
@@ -929,6 +1115,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Rotman School of Management — Discuss transitioning physical government logistics into digital footprints using your custom Gov-IMS frameworks.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Western University — Ivey Business School
@@ -944,6 +1133,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Showcase your Next.js and PowerBI data visualization dashboards for advanced data-driven scheduling and operations.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Manitoba — Asper School of Business
@@ -959,6 +1151,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Asper School of Business — Lead with your MPhil in Sustainable Infrastructure and 5+ years optimizing public procurement for the Government of Pakistan.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Alberta — Alberta School of Business
@@ -974,6 +1169,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Alberta School of Business — Focus on your background as an Operations Manager directing daily production planning and ensuring QC/QA protocol adherence.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Polytechnique Montréal — Mathematics and Industrial Engineering
@@ -989,6 +1187,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mathematics and Industrial Engineering — Pitch the Intelligent BoM project bridging traditional industrial engineering with Gemini Pro Vision for operational extraction.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -1003,6 +1204,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Mathematics and Industrial Engineering — Highlight your capacity to integrate ISO 9001 rigor with big data architectures through the RMSys resilience hub.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Université de Montréal — Computer Science and Operations Research
@@ -1018,6 +1222,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Computer Science and Operations Research — Discuss the AI-driven forecasting engines and automated FEFO protocols you built at ChromaDiv.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -1032,6 +1239,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Computer Science and Operations Research — Emphasize your track record of executing multi-million dollar high-stakes logistics with zero operational downtime.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // UQAM — School of Management (ESG)
@@ -1047,6 +1257,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'School of Management (ESG) — Connect your Net Zero 2050 targets and GreenBuild Ledger architecture specifically to intelligent city logistics hubs.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Laval University — Management
@@ -1062,6 +1275,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management — Detail your SAP-based material requirement planning experience paired with your ability to code custom Python optimization scripts.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // HEC Montréal — Logistics and Operations Management
@@ -1077,6 +1293,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Logistics and Operations Management — Position your extensive Supply Chain Analyst role optimizing operations and procurement for the Government of Pakistan.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Western University — Ivey Business School
@@ -1092,6 +1311,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Ivey Business School — Focus on your founding of ChromaDiv to integrate custom AI tools and guide organizations through Industry 4.0 shifts.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Waterloo — Management Sciences
@@ -1107,6 +1329,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Highlight your practical mastery of inventory control, achieving 99.2% stock accuracy through JIT vendor frameworks.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Alberta — Alberta School of Business
@@ -1122,6 +1347,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Alberta School of Business — Present your automated CAPA tracking models and data visualization tools that successfully replaced legacy government architectures.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // University of Waterloo — Management Sciences
@@ -1137,6 +1365,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Management Sciences — Demonstrate the measurable ROI of your data analytics skills, specifically the 15% cost reduction achieved on $10M+ in contract spend.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   // Concordia University — Building, Civil and Environmental Engineering
@@ -1152,6 +1383,9 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Building, Civil and Environmental Engineering — A strong synergy: focus on your LEED BD+C framework execution and the 12% material waste reduction achieved in industrial spaces.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
   {
@@ -1166,6 +1400,63 @@ export const seedSupervisors: Supervisor[] = [
     responded: false,
     responseType: null,
     notes: 'Supply Chain and Business Technology Management — Leverage your core positioning statement: offering the technical precision of a Mechanical Engineer combined with the foresight of an MBA.',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
+    createdAt: now,
+  },
+  // From the faculty named in program notes (audit, Aug 2026); contact details not yet researched.
+  {
+    id: 'sup-80',
+    university: "Queen's University",
+    name: 'Yuri Levin',
+    researchFocus: 'Pricing and revenue management',
+    email: '',
+    website: '',
+    googleScholar: '',
+    contacted: false,
+    responded: false,
+    responseType: null,
+    notes: 'Named in the Smith School PhD notes (prog-16).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
+    createdAt: now,
+  },
+  // From the faculty named in program notes (audit, Aug 2026); contact details not yet researched.
+  {
+    id: 'sup-81',
+    university: "Queen's University",
+    name: 'Mikhail Nediak',
+    researchFocus: 'Operations',
+    email: '',
+    website: '',
+    googleScholar: '',
+    contacted: false,
+    responded: false,
+    responseType: null,
+    notes: 'Named in the Smith School PhD notes (prog-16).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
+    createdAt: now,
+  },
+  // From the faculty named in program notes (audit, Aug 2026); contact details not yet researched.
+  {
+    id: 'sup-82',
+    university: 'Wilfrid Laurier University',
+    name: 'Alireza Farahani',
+    researchFocus: 'Supply chain',
+    email: '',
+    website: '',
+    googleScholar: '',
+    contacted: false,
+    responded: false,
+    responseType: null,
+    notes: 'Named in the Lazaridis PhD notes (prog-18).',
+    contactedAt: null,
+    followUpAt: null,
+    respondedAt: null,
     createdAt: now,
   },
 ];

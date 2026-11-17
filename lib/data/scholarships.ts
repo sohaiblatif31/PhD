@@ -1,7 +1,8 @@
-import { Scholarship } from '@/lib/types';
+import type { Scholarship } from '@/lib/types';
 
 const now = new Date().toISOString();
-const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+// Date of the audit that verified schol-4, schol-5 and schol-8.
+const AUDIT_DATE = '2026-08-07';
 
 export const seedScholarships: Scholarship[] = [
   {
@@ -23,6 +24,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Federal',
     lastVerified: null,
     discontinued: false,
+    provinces: [],
   },
   {
     id: 'schol-2',
@@ -43,6 +45,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Foundation',
     lastVerified: null,
     discontinued: false,
+    provinces: [],
   },
   {
     id: 'schol-3',
@@ -63,6 +66,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Industry',
     lastVerified: null,
     discontinued: false,
+    provinces: [],
   },
   {
     id: 'schol-4',
@@ -71,7 +75,7 @@ export const seedScholarships: Scholarship[] = [
     value: '$40,000 CAD/yr, renewable up to 4 years',
     valueAmount: '$40,000/yr',
     deadline: 'OTS nomination follows each host university\'s own PhD application deadline — no separate OTS deadline exists. Apply by submitting your PhD application on time; your Ontario university nominates you automatically.',
-    deadlineDate: '2027-01-15',
+    deadlineDate: null,
     link: 'https://www.ontario.ca/page/ontario-trillium-scholarship',
     eligibility: 'International students only (valid Canadian study permit); A-average (80%+) in final two years; enrolling full-time in a doctoral program at an eligible Ontario university.',
     requirements: 'No separate application in most cases — nominated automatically by your Ontario university based on your PhD application.',
@@ -81,8 +85,9 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
-    lastVerified: null,
+    lastVerified: AUDIT_DATE,
     discontinued: false,
+    provinces: ['ON'],
   },
   {
     id: 'schol-5',
@@ -101,8 +106,9 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: true,
     category: 'Provincial',
-    lastVerified: today,
+    lastVerified: AUDIT_DATE,
     discontinued: false,
+    provinces: ['QC'],
   },
   {
     id: 'schol-6',
@@ -123,6 +129,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Provincial',
     lastVerified: null,
     discontinued: false,
+    provinces: ['AB'],
   },
 
   // ── NEW SCHOLARSHIPS ADDED VIA RESEARCH (Aug 2026) ──────────────────────
@@ -146,6 +153,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Provincial',
     lastVerified: null,
     discontinued: false,
+    provinces: ['ON'],
   },
 
   {
@@ -165,8 +173,9 @@ export const seedScholarships: Scholarship[] = [
     status: 'Not Started',
     internationalEligible: false,
     category: 'Federal',
-    lastVerified: today,
+    lastVerified: AUDIT_DATE,
     discontinued: true,
+    provinces: [],
   },
 
   {
@@ -188,6 +197,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Provincial',
     lastVerified: null,
     discontinued: false,
+    provinces: ['BC'],
   },
 
   {
@@ -209,6 +219,7 @@ export const seedScholarships: Scholarship[] = [
     category: 'Industry',
     lastVerified: null,
     discontinued: false,
+    provinces: [],
   },
 
   {
@@ -230,5 +241,6 @@ export const seedScholarships: Scholarship[] = [
     category: 'Federal',
     lastVerified: null,
     discontinued: false,
+    provinces: [],
   },
 ];

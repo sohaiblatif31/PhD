@@ -1,4 +1,4 @@
--- Run this in your Supabase SQL Editor
+-- Full schema for a fresh project. Existing projects: apply supabase/migrations/* in order instead.
 
 -- Programs Table
 CREATE TABLE programs (
@@ -51,7 +51,8 @@ CREATE TABLE scholarships (
   "internationalEligible" BOOLEAN NOT NULL,
   category TEXT NOT NULL,
   "lastVerified" DATE,
-  discontinued BOOLEAN NOT NULL DEFAULT false
+  discontinued BOOLEAN NOT NULL DEFAULT false,
+  provinces TEXT[] NOT NULL DEFAULT '{}'
 );
 
 -- Supervisors Table
@@ -67,13 +68,26 @@ CREATE TABLE supervisors (
   responded BOOLEAN NOT NULL DEFAULT false,
   "responseType" TEXT,
   notes TEXT,
+  "contactedAt" DATE,
+  "followUpAt" DATE,
+  "respondedAt" DATE,
   "createdAt" TIMESTAMPTZ NOT NULL
 );
 
--- Note: In a production app, you would enable Row Level Security (RLS) here.
--- Since this is a single-user project without auth for now, we will not enforce RLS.
+-- Referees Table (reference letters; requests = [{ programId, requestedAt, submittedAt }])
+CREATE TABLE referees (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL DEFAULT '',
+  affiliation TEXT NOT NULL DEFAULT '',
+  relationship TEXT NOT NULL DEFAULT '',
+  notes TEXT NOT NULL DEFAULT '',
+  requests JSONB NOT NULL DEFAULT '[]',
+  "createdAt" TIMESTAMPTZ NOT NULL DEFAULT now()
+);
 
--- Migration: run these if the tables already exist from a previous schema version
--- ALTER TABLE programs ADD COLUMN IF NOT EXISTS "lastVerified" DATE;
--- ALTER TABLE scholarships ADD COLUMN IF NOT EXISTS "lastVerified" DATE;
--- ALTER TABLE scholarships ADD COLUMN IF NOT EXISTS discontinued BOOLEAN NOT NULL DEFAULT false;
+-- Only the server (service role key, after password login) may touch the data: RLS on, no policies.
+ALTER TABLE programs ENABLE ROW LEVEL SECURITY;
+ALTER TABLE scholarships ENABLE ROW LEVEL SECURITY;
+ALTER TABLE supervisors ENABLE ROW LEVEL SECURITY;
+ALTER TABLE referees ENABLE ROW LEVEL SECURITY;

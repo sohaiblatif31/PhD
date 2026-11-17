@@ -1,5 +1,5 @@
 -- PhD Tracker Migration — Add lastVerified and discontinued columns
--- Run this in your Supabase SQL Editor before re-seeding.
+-- Safe to re-run (IF NOT EXISTS). Apply first if these columns are missing.
 
 -- 1. Add lastVerified column to programs table
 ALTER TABLE public.programs 
