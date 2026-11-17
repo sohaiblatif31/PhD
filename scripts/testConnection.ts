@@ -1,24 +1,15 @@
-export {};
-const { createClient } = require('@supabase/supabase-js');
-require('dotenv').config({ path: '.env.local' });
+// Run with: node scripts/testConnection.ts  (reads .env.local; read-only)
+import { createClient } from '@supabase/supabase-js';
+import { config } from 'dotenv';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-
-const supabase = createClient(supabaseUrl, supabaseKey);
-
-async function testConnection() {
-  console.log('Testing connection to:', supabaseUrl);
-  try {
-    const { data, error } = await supabase.from('programs').select('count', { count: 'exact', head: true });
-    if (error) {
-      console.error('Connection failed with error:', error);
-    } else {
-      console.log('Connection successful! Data count:', data);
-    }
-  } catch (err) {
-    console.error('Fetch crashed:', err);
-  }
+config({ path: '.env.local' });
+const url = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+if (!url || !key) {
+  console.error('Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env.local');
+  process.exit(1);
 }
 
-testConnection();
+const { count, error } = await createClient(url, key, { auth: { persistSession: false } })
+  .from('programs').select('id', { count: 'exact', head: true });
+console.log(error ? `Connection failed: ${error.message}` : `Connected. ${count} programs.`);

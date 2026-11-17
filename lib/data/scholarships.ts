@@ -1,6 +1,5 @@
 import type { Scholarship } from '@/lib/types';
 
-const now = new Date().toISOString();
 // Date of the audit that verified schol-4, schol-5 and schol-8.
 const AUDIT_DATE = '2026-08-07';
 

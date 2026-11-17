@@ -76,7 +76,7 @@ export function staleRecords(data: AppData, today: string): StaleRecord[] {
     if (age === null || age > STALE_AFTER_DAYS) out.push({ kind, id, title, href, lastVerified, age });
   };
   for (const p of data.programs) {
-    if (OPEN_PROGRAM.includes(p.status)) check('program', p.id, `${p.university} · ${p.program}`, `/programs/${p.id}`, p.lastVerified);
+    if (OPEN_PROGRAM.includes(p.status)) check('program', p.id, `${p.university}, ${p.program}`, `/programs/${p.id}`, p.lastVerified);
   }
   for (const s of data.scholarships) {
     if (!s.discontinued && OPEN_SCHOLARSHIP.includes(s.status)) check('scholarship', s.id, s.shortName || s.name, '/scholarships', s.lastVerified);

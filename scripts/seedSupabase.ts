@@ -1,4 +1,5 @@
 // Seed script — run with: npx ts-node --esm scripts/seedSupabase.ts
+// WARNING: upsert overwrites matching rows in the live database (statuses, notes, checklists). For a fresh project only.
 // OR: npx tsx scripts/seedSupabase.ts
 import { createClient } from '@supabase/supabase-js';
 import { config } from 'dotenv';
@@ -10,11 +11,12 @@ const __dirname = dirname(__filename);
 
 config({ path: join(__dirname, '..', '.env.local') });
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+// RLS blocks the anon key, so seeding uses the service role key (never expose it to the browser).
+const supabaseUrl = process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
 if (!supabaseUrl || !supabaseKey) {
-  console.error('❌ Missing Supabase credentials in .env.local');
+  console.error('❌ Missing SUPABASE_URL or SUPABASE_SERVICE_ROLE_KEY in .env.local');
   process.exit(1);
 }
 
