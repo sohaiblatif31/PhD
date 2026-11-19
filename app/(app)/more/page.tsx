@@ -60,10 +60,10 @@ export default function MorePage() {
 
       <section className="mb-8" aria-labelledby="look">
         <h2 id="look" className="section-title mb-3">Appearance</h2>
-        <div className="inline-flex rounded-[12px] border border-line bg-surface p-1" role="radiogroup" aria-label="Theme">
+        <div className="inline-flex rounded-full border border-line bg-surface p-1" role="radiogroup" aria-label="Theme">
           {THEMES.map(([v, label]) => (
             <button key={v} role="radio" aria-checked={current === v} onClick={() => choose(v)}
-              className={`min-h-10 rounded-[9px] px-4 text-[14px] font-semibold ${current === v ? 'bg-ink text-paper' : 'text-ink-2'}`}>{label}</button>
+              className={`min-h-10 rounded-full px-5 text-[14px] font-semibold transition-colors ${current === v ? 'bg-accent text-white' : 'text-ink-2 hover:text-ink'}`}>{label}</button>
           ))}
         </div>
       </section>

@@ -13,9 +13,11 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
     <main className="grid min-h-dvh place-items-center px-4" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
       <div className="w-full max-w-sm">
         <div className="mb-8 flex items-center gap-3">
-          <span className="grid h-12 w-12 place-items-center rounded-[12px] bg-[#17213a] font-serif text-[17px] ring-1 ring-inset ring-white/15 font-semibold text-[#f4f5f1]">PhD</span>
+          <span className="relative grid h-12 w-12 place-items-center rounded-full text-[15px] font-extrabold tracking-tight text-white shadow-[0_6px_16px_-8px_rgba(31,58,147,0.8)]" style={{ background: 'var(--hero)' }}>
+            PhD<span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-gold" aria-hidden />
+          </span>
           <div>
-            <h1 className="font-serif text-[26px] font-semibold leading-none">PhD Tracker</h1>
+            <h1 className="text-[26px] font-extrabold leading-none tracking-tight">PhD Tracker</h1>
             <p className="mt-1 text-sm text-ink-3">Fall 2027 applications</p>
           </div>
         </div>

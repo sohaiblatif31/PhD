@@ -38,8 +38,8 @@ export default function Shell({ children }: { children: ReactNode }) {
     <div className="shell">
       <nav className="rail" aria-label="Main">
         <Link href="/" className="rail-brand" aria-label="PhD Tracker, today">
-          <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-[13px] text-[14px] font-extrabold tracking-tight text-white shadow-[0_6px_16px_-8px_rgba(31,58,147,0.8)]" style={{ background: 'var(--hero)' }}>
-            PhD<span className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-gold" aria-hidden />
+          <span className="relative grid h-11 w-11 shrink-0 place-items-center rounded-full text-[14px] font-extrabold tracking-tight text-white shadow-[0_6px_16px_-8px_rgba(31,58,147,0.8)]" style={{ background: 'var(--hero)' }}>
+            PhD<span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-gold" aria-hidden />
           </span>
           <span className="brand-text ml-3 leading-tight">
             <span className="block text-[17px] font-extrabold tracking-tight">PhD Tracker</span>

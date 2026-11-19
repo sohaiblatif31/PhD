@@ -54,7 +54,7 @@ export default function ProgramDetail() {
 
   return (
     <div>
-      <Link href="/programs" className="-ml-2 mb-3 inline-flex min-h-11 items-center gap-1 rounded-[10px] px-2 text-[15px] font-medium text-ink-2 hover:text-ink">
+      <Link href="/programs" className="-ml-2 mb-3 inline-flex min-h-11 items-center gap-1 rounded-full px-3 hover:bg-surface-2 text-[15px] font-medium text-ink-2 hover:text-ink">
         <ArrowLeft size={18} aria-hidden /> Programs
       </Link>
 
