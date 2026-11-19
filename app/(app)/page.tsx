@@ -47,10 +47,10 @@ export default function TodayPage() {
 
   return (
     <div>
-      <header className="mb-8 max-w-3xl md:mb-10">
-        <p className="text-[15px] font-medium text-ink-3">{format(parseISO(today), 'EEEE, MMMM d')}</p>
-        <h1 className="page-title mt-1">{headline}</h1>
-        {lede && <p className="mt-3 text-[17px] text-ink-2">{lede[0].toUpperCase() + lede.slice(1)}.</p>}
+      <header className="mb-6 md:mb-8">
+        <p className="mb-3 text-[15px] font-semibold text-ink-3">{format(parseISO(today), 'EEEE, MMMM d')}</p>
+        {next ? <NextUp d={next} /> : <h1 className="page-title">{headline}</h1>}
+        {lede && <p className="mt-4 max-w-3xl text-[16px] text-ink-2">{lede[0].toUpperCase() + lede.slice(1)}.</p>}
       </header>
 
       <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px] lg:gap-8">
@@ -150,7 +150,7 @@ function LedgerRow({ d }: { d: Deadline }) {
   return (
     <li>
       <Link href={d.href} className="ledger-row group">
-        <span className={`ledger-days ${late || d.days <= 14 ? 'late' : ''}`}>
+        <span className={`ledger-days ${late || d.days <= 14 ? 'late' : d.days <= 45 ? 'soon' : ''}`}>
           {Math.abs(d.days)}
           <span className="ledger-unit">{late ? (d.days === -1 ? 'day late' : 'days late') : d.days === 0 ? 'today' : d.days === 1 ? 'day' : 'days'}</span>
         </span>
@@ -174,5 +174,34 @@ function LedgerRow({ d }: { d: Deadline }) {
         </span>
       </Link>
     </li>
+  );
+}
+
+/** The one bold moment: the next deadline, with days left inside a gold ring that fills as its documents get done. */
+function NextUp({ d }: { d: Deadline }) {
+  const pct = d.pct ?? 0;
+  const r = 52, c = 2 * Math.PI * r;
+  const when = d.days === 0 ? 'Closes today' : `Closes ${formatDate(d.date)}`;
+  return (
+    <section className="hero" aria-labelledby="next-up">
+      <div className="relative z-10 min-w-0">
+        <p className="text-[14px] font-semibold text-white/75">Next up</p>
+        <h1 id="next-up" className="hero-title mt-1">{d.title}</h1>
+        <p className="hero-meta mt-2">{d.subtitle}</p>
+        <p className="hero-meta mt-0.5">{when}{d.nextItem ? `. Next: ${d.nextItem}` : ''}</p>
+        <Link href={d.href} className="btn btn-sm mt-4">Open {d.kind === 'scholarship' ? 'award' : 'program'}</Link>
+      </div>
+      <div className="dial relative z-10" role="img" aria-label={`${d.days} days left${d.pct !== undefined ? `, documents ${pct}% ready` : ''}`}>
+        <svg viewBox="0 0 120 120" aria-hidden>
+          <circle className="dial-track" cx="60" cy="60" r={r} fill="none" strokeWidth="9" />
+          {d.pct !== undefined && <circle className="dial-fill" cx="60" cy="60" r={r} fill="none" strokeWidth="9" strokeDasharray={c} strokeDashoffset={c * (1 - pct / 100)} />}
+        </svg>
+        <span className="dial-label">
+          <span className="dial-days">{d.days}</span>
+          <span className="dial-unit">{d.days === 1 ? 'day left' : 'days left'}</span>
+          {d.pct !== undefined && <span className="dial-unit">{pct}% ready</span>}
+        </span>
+      </div>
+    </section>
   );
 }
